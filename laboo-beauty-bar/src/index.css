@@ -43,13 +43,18 @@ body {
 }
 .nav-button {
   color: black;
-  background-color: gold;
-  padding: 10px 10px;
+  background-color: #ecda4c;
+  padding: 10px 20px;
   border-radius: 20px;
+  margin-left: 30px;
   transition: all 0.2s ease-in-out;
 }
 .nav-button:hover {
   transform: scale(1.15);
+}
+.landing-page {
+  position: relative;
+  bottom: 55px;
 }
 .main-container {
   position: relative;
@@ -66,13 +71,14 @@ body {
 .left-side {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .side-image {
-  width: 400px;
-  max-width: 90vw;
+  width: 450px;
+  max-width: 1000px;
   height: auto;
+  padding: 25px 70px 20px 20px;
 }
 
 .right-side {
@@ -81,35 +87,63 @@ body {
   text-align: left;
   max-width: 600px;
   color: #ecda4c;
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
+}
+.title-wrapper {
+  position: relative;
+}
+.info-wrapper {
+  position: relative;
+  right: 110px;
 }
 
 h1 {
-  font-family: "The Darling", cursive;
-  font-size: 180px;
-  color: #ecda4c;
+  font-family: "Amoresa", cursive;
+  font-size: 150px;
+  color: #fffacd;
   text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
-  margin-bottom: 0.5;
-  line-height: 1;
+  margin-bottom: 0.3rem;
 }
 
 .title-trailer {
-  font-size: 2.5rem;
-  color: #fffacd;
-  text-transform: lowercase;
+  font-size: 40px;
   letter-spacing: 0.4rem;
   margin-top: -0.8rem;
   margin-bottom: 1.5rem;
-  text-transform: lowercase;
   padding-left: 0.4rem;
+  position: relative;
+  bottom: 100px;
+  left: 240px;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
 }
 .services {
+  position: relative;
+  bottom: 90px;
+  right: 100px;
   font-size: 1.2rem;
   color: #ffeaa7;
   font-weight: 600px;
   line-height: 1.6;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
 }
 .white-text {
-  color: #fffacd;
-  text-shadow: 0 0 25px #fff9c4, 0 0 40px #ffff99;
+  font-size: 30px;
+  position: relative;
+  left: 150px;
+  top: 60px;
+  color: white;
+}
+.shop-location {
+  position: relative;
+  bottom: 130px;
+  left: 950px;
+}
+.location-image {
+  max-width: 75px;
+  border-radius: 90%;
+}
+.location-tag {
+  color: white;
+  position: relative;
+  bottom: 37px;
+  font-size: 20px;
 }
