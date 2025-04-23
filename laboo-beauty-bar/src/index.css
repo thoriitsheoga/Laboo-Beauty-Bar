@@ -8,8 +8,16 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 
 .navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -136,7 +144,7 @@ h1 {
 .shop-location {
   position: relative;
   bottom: 130px;
-  left: 950px;
+  left: 955px;
 }
 .location-image {
   max-width: 75px;
@@ -147,4 +155,26 @@ h1 {
   position: relative;
   bottom: 37px;
   font-size: 20px;
+}
+.about-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 70px;
+}
+.about-left {
+  padding: 70px 60px;
+}
+.about-right {
+  padding: 20px 90px;
+}
+.profile-picture {
+  max-width: 300px;
+  border-radius: 50%;
+}
+.about-title {
+  font-size: 60px;
+}
+.about-description {
+  color: white;
 }
