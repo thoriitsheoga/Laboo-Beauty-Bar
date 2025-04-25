@@ -13,7 +13,8 @@ function AboutSection() {
           />
         </div>
         <div className="about-right">
-          <h1 className="about-title">Your new favourite NailTech</h1>
+          <h1 className="about-title">Your New Favourite NailTech</h1>
+          <h2 className="about-subtitle">let a boo do your nails</h2>
           <p className="about-description">
             <div>
               Hello, I am Lethabo, a self-taught nail tech situated at Gate 2,

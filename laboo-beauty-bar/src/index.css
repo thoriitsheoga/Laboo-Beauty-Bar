@@ -7,14 +7,16 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-repeat: repeat-y;
 }
 .nav {
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 
 .navbar {
+  font-size: 30px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -160,7 +162,7 @@ h1 {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 70px;
+  bottom: 90px;
 }
 .about-left {
   padding: 70px 60px;
@@ -173,8 +175,93 @@ h1 {
   border-radius: 50%;
 }
 .about-title {
+  color: white;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #ffffff;
   font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.about-subtitle{
+  color: #fffacd;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
+  font-family: "Amoresa", cursive;
+  position: relative;
+  bottom: 29px;
+  text-align: center;
+  font-size: 45px;
+  
 }
 .about-description {
   color: white;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  bottom: 15px;
 }
+.booking-title{
+  font-family: 'Times New Roman', Times, serif;
+  color:white;
+  text-shadow:
+  0 0 10px #ffffff,
+  0 0 20px #ffffff,
+  0 0 30px #ffffff;
+}
+.bookingpolicies-title{
+  font-size: 65px;
+  text-align: center;
+}
+.policy-container-one{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px 30px;
+  font-size: 25px;
+  gap:20px;
+  position: relative;
+  bottom:15px;
+}
+.policy-container-two{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 25px;
+  position: relative;
+  gap:20px;
+  align-items: stretch;
+  position: relative;
+  bottom: 35px;
+}
+.policy{
+  flex:1;
+  max-width: 500px;
+  text-align: center;
+  padding: 50px 50px;
+  box-sizing:border-radius;
+}
+.policy .yellow{
+  color: black;
+  background-color: yellow;
+  padding: 30px 30px;
+  bottom: 15px;
+  border-radius: 30px;
+  max-width: 800px;
+}
+.policy .black{
+  color: white;
+  background-color: black;
+  padding: 30px 30px;
+  bottom: 15px;
+  border-radius: 30px;
+  max-width: 800px;
+}
+.policy .yellow,
+.policy .black {
+  padding: 30px;
+  border-radius: 30px;
+  width: 100%; /* make button/content fill the .policy */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
