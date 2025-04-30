@@ -5,21 +5,20 @@ body {
   background-repeat: no-repeat;
   height: 100vh; /* Full viewport height */
   margin: 0;
-  padding: 0;
+  padding-left: 80px;
   overflow-x: hidden;
   background-repeat: repeat-y;
 }
 .nav {
-  position: -webkit-sticky;
+  position:fixed;
   position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .navbar {
   font-size: 30px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -264,4 +263,83 @@ h1 {
   max-width: 100%;
   box-sizing: border-box;
 }
+.review-container{
+  position: relative;
+  bottom: 40px;
+}
+.review-title{
+  font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #ffffff;
+  text-align: center;
+}
+.gold-text{
+  font-size: 55px;
+  font-family: "Amoresa", cursive;
+  color: #fffacd;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
+  text-align: center;
+  position: relative;
+  bottom: 90px;
+}
+.review-images-container{
+  display:flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  left: 40px;
+  bottom: 20px;
+  
+}
+.review-images{
+  max-width: 250px;
+}
+.leave-review{
+  font-size: 45px;
+  color: white;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #ffffff;
+  text-align: center;
+  position: relative;
+  right: 90px;
+  
+}
+.gold-review{
+  color: #fffacd;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc700, 0 0 30px #ffaa00;
+  font-size: 55px;
+  font-family: "Amoresa", cursive;
+  position: relative;
+  bottom: 120px;
+  left: 990px;
+}
+.star-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ← centers horizontally */
+  justify-content: center;
+  position: relative;
+  bottom:100px;
+}
+
+.rating-text {
+  margin-top: 12px;
+  font-size: 20px;
+  color: #ffd700;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  bottom: 120px;
+}
+
 
