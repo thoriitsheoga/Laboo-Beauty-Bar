@@ -6,25 +6,28 @@ body {
   height: 100vh; /* Full viewport height */
   margin: 0;
   padding-left: 80px;
+  padding-top:50px;
   overflow-x: hidden;
   background-repeat: repeat-y;
 }
-.nav {
-  position:fixed;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
 
 .navbar {
-  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  position: fixed;
+  top: 0;
+  left:0;
+  width:100%;
+  max-height: 60px;
+  z-index: 1000;
+  font-size: 25px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  background-color: #333;
-  padding: 1rem 2rem;
+  background-color: black;
+  padding: 30px 10px 5px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
+  margin: 0 auto;
 }
 .logo-container {
   display: flex;
@@ -51,16 +54,19 @@ body {
   color: white;
   text-decoration: none;
 }
+
 .nav-button {
+  font-size: 20px;
   color: black;
   background-color: #ecda4c;
-  padding: 10px 20px;
+  padding: 15px 25px;
   border-radius: 20px;
   margin-left: 30px;
   transition: all 0.2s ease-in-out;
 }
 .nav-button:hover {
   transform: scale(1.15);
+  cursor: pointer;
 }
 .landing-page {
   position: relative;
@@ -318,7 +324,7 @@ h1 {
   font-family: "Amoresa", cursive;
   position: relative;
   bottom: 120px;
-  left: 990px;
+  left: 950px;
 }
 .star-container {
   margin-top: 30px;
