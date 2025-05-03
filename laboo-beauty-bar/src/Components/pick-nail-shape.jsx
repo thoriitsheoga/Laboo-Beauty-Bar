@@ -1,65 +1,100 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Add this import
 import AlmondNails from './assets/almond-nails.jpg';
 import SquareNails from './assets/sqaure-nails.jpg';
 import StilletoNails from './assets/stilleto-nails.jpg';
 import CoffinNails from './assets/coffin-nails.jpg';
 import LipstickNails from './assets/lipstick-nails.jpg';
-import DuckNails from './assets/natural-nails.jpg';
+import DuckNails from './assets/duck-nails.jpg';
 import Pedicure from './assets/pedicure.png';
 import NaturalNails from './assets/natural-nails.jpg';
 
-const NailShape = () =>{
-    return(
-        <>
-        <h1 className='nailshape-title'>PICK A NAIL SHAPE</h1>
-        <div className='nailshape-menu'>
-        <div className='first-row-nail-shape'>
-            <div className='nailshape-image-container'>
-                <img src={AlmondNails} className='nailshape-image'/>
-                <p>Almond Nails</p>
+const nailShapes = [
+  { name: 'Almond', img: AlmondNails },
+  { name: 'Square', img: SquareNails },
+  { name: 'Stiletto', img: StilletoNails },
+  { name: 'Coffin', img: CoffinNails },
+  { name: 'Lipstick', img: LipstickNails },
+  { name: 'Duck', img: DuckNails },
+  { name: 'Natural', img: NaturalNails },
+  { name: 'Pedicure', img: Pedicure }
+];
 
-            </div>
-            <div className='nailshape-image-container'>
-                <img src={SquareNails} className='nailshape-image'/>
-                <p> Square Nails</p>
+const NailShape = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [selection, setSelection] = useState({});
+  const navigate = useNavigate(); // Initialize the navigate function
 
-            </div>
+  const handleClick = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
+  const handleSelectOption = (shape, option) => {
+    setSelection((prev) => ({ ...prev, [shape]: option }));
+    setOpenDropdown(null);
+    console.log(`Selected: ${shape} - ${option}`);
     
-            <div className='nailshape-image-container'>
-                <img src={StilletoNails} className='nailshape-image'/>
-            </div>
-            <div className='nailshape-image-container'>
-                <img src={CoffinNails} className='nailshape-image'/>
-                <p> Coffin Nails</p>
+    // Navigate to /nail-deco after selection
+    navigate('/nail-deco');
+  };
 
+  return (
+    <>
+      <h1 className='nailshape-title'>PICK A NAIL SHAPE</h1>
+      <div className='nailshape-menu'>
+        <div className='nailshape-grid'>
+          {nailShapes.map(({ name, img }) => (
+            <div
+              key={name}
+              className='nailshape-image-container'
+              onClick={() => handleClick(name)}
+              style={{ position: 'relative' }}
+            >
+              <img src={img} className='nailshape-image' alt={`${name} Nails`} />
+              <p className="nailshape-label">{name} Nails</p>
+
+              {openDropdown === name && (
+                <div className='dropdown'>
+                  {name === "Pedicure" ? (
+                    <>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectOption(name, "Plain Pedi (R200)");
+                        }}
+                      >
+                        Plain Pedi (R200)
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectOption(name, "French Pedi (R280)");
+                        }}
+                      >
+                        French Pedi (R280)
+                      </button>
+                    </>
+                  ) : (
+                    ['Short (R200.00)', 'Medium (R250.00)', 'Long (R300.00)'].map((length) => (
+                      <button
+                        key={length}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectOption(name, length);
+                        }}
+                      >
+                        {length}
+                      </button>
+                    ))
+                  )}
+                </div>
+              )}
             </div>
+          ))}
         </div>
-        <div className='second-row-nail-shape'>
-            <div className='nailshape-image-container'>
-                <img src={LipstickNails} className='nailshape-image'/>
-                <p>Lipstick Nails</p>
-
-            </div>
-            <div className='nailshape-image-container'>
-                <img src={DuckNails} className='nailshape-image'/>
-                <p> Duck Nails</p>
-
-            </div>
-            <div className='nailshape-image-container'>
-                <img src={NaturalNails} className='nailshape-image'/>
-                <p> Natural Nails</p>
-
-            </div>
-            <div className='nailshape-image-container'>
-                <img src={Pedicure} className='nailshape-image'/>
-                <p> Pedicure</p>
-
-            </div>
-        </div>
-        </div>
-        </>
-    )
-
-}
+      </div>
+    </>
+  );
+};
 
 export default NailShape;

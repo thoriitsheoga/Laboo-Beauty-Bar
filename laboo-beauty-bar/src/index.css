@@ -508,30 +508,66 @@ h1 {
 /*styling pick a nail shape*/
 .nailshape-title{
   font-family: 'Times New Roman', Times, serif;
-  font-size:80px;
+  font-size: 70px;
   text-align: center;
 }
-.nailshape-menu{
-  display: block;
+.nailshape-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nailshape-label {
+  color: white;
+  text-shadow: 
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #ffffff;
+  text-align: center;
+  font-size: 1.2rem;
+ 
+}
+.nailshape-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+  max-width: 900px; /* optional: controls number per row */
   margin: 0 auto;
+}
+.nailshape-image-container {
+  width: calc(25% - 20px); /* 4 per row with gap accounted for */
+  text-align: center;
+  cursor: pointer;
   position: relative;
-  left: 200px;
-  top: 60px;
+  top: 100px;
 }
-.first-row-nail-shape{
-  display: flex;
-  justify-content: space-between;
-  gap: 70px;
-  max-width: 600px;
-  
+
+.nailshape-image {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 2px solid gold;
+  object-fit: cover;
 }
-.second-row-nail-shape{
-  display: flex;
-  justify-content: space-between;
-  gap: 70px;
-  max-width: 600px;
+
+.dropdown {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 10;
 }
-.nailshape-image{
-  max-width: 200px;
-  border-radius: 70%;
+
+.dropdown button {
+  display: block;
+  margin: 5px auto;
+  padding: 5px 12px;
+  background: gold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

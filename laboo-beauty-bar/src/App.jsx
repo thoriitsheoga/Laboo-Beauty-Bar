@@ -9,6 +9,7 @@ import Review from "./Components/review";
 import BookingNow from './Components/booknow';
 import BookWig from "./Components/wig-booking";
 import NailShape from "./Components/pick-nail-shape";
+import NailDecoration from "./Components/nail-deco";
 import "./fonts/fonts.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/booknow" element={<BookingNow />} />
         <Route path ="/wig-booking" element={<BookWig/>}/>
         <Route path="/pick-nail-shape" element={<NailShape/>}/>
+        <Route path="/nail-deco" element={<NailDecoration/>}/>
       </Routes>
     </Router>
   );
