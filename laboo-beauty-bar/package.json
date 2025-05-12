@@ -1,5 +1,6 @@
 {
   "name": "laboo-beauty-bar",
+  "proxy": "http://localhost:5000",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "lucide-react": "^0.503.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-rating-stars-component": "^2.2.0",
-    "react-router-dom": "^7.5.3",
+    "react-router-dom": "^7.6.0",
     "react-slick": "^0.30.3",
     "react-star-ratings": "^2.3.0",
     "slick-carousel": "^1.8.1"

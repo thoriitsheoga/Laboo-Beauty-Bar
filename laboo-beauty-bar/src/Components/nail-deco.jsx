@@ -5,7 +5,6 @@ import FrenchNails from "./assets/frenchnails.png";
 import MarbleNails from "./assets/marbleNails.jpg";
 import OmbreNails from "./assets/OmbreNails.jpeg";
 
-
 const nailDeco = [
   { name: 'Plain', img: PlainNails },
   { name: 'French', img: FrenchNails },
@@ -16,29 +15,31 @@ const nailDeco = [
 const NailDecoration = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { 
-    selectedShape, 
-    selectedOption, 
-    shapePrice 
+
+  const {
+    selectedShape = '',
+    selectedOption = '',
+    shapePrice = 0,
+    shapeImage = null
   } = location.state || {};
-  
+
   const [selectedDecoration, setSelectedDecoration] = useState(null);
   const [showOptions, setShowOptions] = useState(false);
   const [nailArtCount, setNailArtCount] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(shapePrice || 0);
+
+  const basePrice = parseFloat(shapePrice) || 0;
+  const nailArtPrice = nailArtCount * 15;
+  const totalPrice = basePrice + nailArtPrice;
 
   const handleSelect = (deco) => {
     setSelectedDecoration(deco);
     setShowOptions(true);
-    setTotalPrice(shapePrice || 0);
-    setNailArtCount(0);
+    setNailArtCount(0); // reset art count
   };
 
   const handleNailArtCountChange = (e) => {
-    let count = parseInt(e.target.value) || 0;
-    count = Math.max(0, Math.min(count, 10));
+    const count = Math.max(0, Math.min(10, parseInt(e.target.value) || 0));
     setNailArtCount(count);
-    setTotalPrice((shapePrice || 0) + (count * 15));
   };
 
   const handleSubmit = () => {
@@ -46,24 +47,22 @@ const NailDecoration = () => {
       state: {
         shape: selectedShape,
         shapeOption: selectedOption,
-        shapePrice: shapePrice,
+        shapePrice: basePrice,
         decoration: selectedDecoration?.name,
-        nailArtCount: nailArtCount,
-        nailArtPrice: nailArtCount * 15,
-        totalPrice: totalPrice
+        nailArtCount,
+        nailArtPrice,
+        totalPrice
       }
     });
   };
 
   return (
     <div className="nail-decoration-container">
-      <h1 className="naildeco-title">
-        NAIL DECORATION 
-      </h1>
+      <h1 className="naildeco-title">NAIL DECORATION</h1>
 
       <div className="naildeco-options-container">
         {nailDeco.map((deco) => (
-          <div 
+          <div
             key={deco.name}
             className={`naildeco-card ${selectedDecoration?.name === deco.name ? 'selected' : ''}`}
             onClick={() => handleSelect(deco)}
@@ -76,48 +75,36 @@ const NailDecoration = () => {
 
       {showOptions && selectedDecoration && (
         <div className="options-panel">
-          <div className="selection-summary">
-            <h3>Your Current Selection</h3>
-            <div className="selection-details">
-              <div className="selection-row">
-                <span>Base Shape:</span>
-                <span>{selectedShape} {selectedOption} (R{shapePrice})</span>
-              </div>
-              <div className="selection-row">
-                <span>Decoration:</span>
-                <span>{selectedDecoration.name}</span>
-              </div>
-            </div>
+          <h3>Your Current Selection</h3>
 
-            <div className="nail-art-options">
-              <h4>Add Nail Art (R15 per nail)</h4>
-              <div className="nail-art-controls">
-                <input
-                  type="number"
-                  min="0"
-                  max="10"
-                  value={nailArtCount}
-                  onChange={handleNailArtCountChange}
-                  placeholder="0"
-                />
-                <span className="art-price">R{nailArtCount * 15}</span>
-              </div>
-            </div>
-
-            <div className="total-section">
-              <div className="total-row">
-                <span>Total:</span>
-                <span className="total-price">R{totalPrice}</span>
-              </div>
-            </div>
-
-            <button 
-              className="submit-button"
-              onClick={handleSubmit}
-            >
-              Continue to Checkout
-            </button>
+          <div className="selection-details">
+            <div><strong>Base Shape:</strong> {selectedShape} ({selectedOption})</div>
+            <div><strong>Base Price:</strong> R{basePrice}</div>
+            <div><strong>Decoration:</strong> {selectedDecoration.name}</div>
           </div>
+
+         
+
+          <div className="nail-art-options">
+            <h4>Add Nail Art (R15 per nail)</h4>
+            <input
+              type="number"
+              min="0"
+              max="10"
+              value={nailArtCount}
+              onChange={handleNailArtCountChange}
+              placeholder="0"
+            />
+            <span>Art Price: R{nailArtPrice}</span>
+          </div>
+
+          <div className="total-section">
+            <strong>Total: R{totalPrice}</strong>
+          </div>
+
+          <button className="submit-button" onClick={handleSubmit}>
+            Continue to Checkout
+          </button>
         </div>
       )}
     </div>

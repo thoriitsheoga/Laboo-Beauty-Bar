@@ -20,22 +20,29 @@ const nailShapes = [
   { name: 'Pedicure', img: Pedicure }
 ];
 
+const nailPrices = [
+  { size: 'short', price: 200 },
+  { size: 'medium', price: 250 },
+  { size: 'long', price: 300 }
+];
+
 const NailShape = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [selection, setSelection] = useState({});
   const navigate = useNavigate(); // Initialize the navigate function
 
   const handleClick = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
-  const handleSelectOption = (shape, option) => {
-    setSelection((prev) => ({ ...prev, [shape]: option }));
-    setOpenDropdown(null);
-    console.log(`Selected: ${shape} - ${option}`);
-    
-    // Navigate to /nail-deco after selection
-    navigate('/nail-deco');
+  const handleSelectOption = (shape, option, price) => {
+    navigate('/nail-deco', {
+      state: {
+        selectedShape: shape,
+        selectedOption: option,
+        shapePrice: price,
+        shapeImage: nailShapes.find((s) => s.name === shape).img,
+      },
+    });
   };
 
   return (
@@ -60,7 +67,7 @@ const NailShape = () => {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleSelectOption(name, "Plain Pedi (R200)");
+                          handleSelectOption(name, "Plain Pedi", 200); // Price for Plain Pedi
                         }}
                       >
                         Plain Pedi (R200)
@@ -68,22 +75,22 @@ const NailShape = () => {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleSelectOption(name, "French Pedi (R280)");
+                          handleSelectOption(name, "French Pedi", 280); // Price for French Pedi
                         }}
                       >
                         French Pedi (R280)
                       </button>
                     </>
                   ) : (
-                    ['Short (R200.00)', 'Medium (R250.00)', 'Long (R300.00)'].map((length) => (
+                    nailPrices.map(({ size, price }) => (
                       <button
-                        key={length}
+                        key={size}
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleSelectOption(name, length);
+                          handleSelectOption(name, `${size} (${price})`, price); // Pass price dynamically
                         }}
                       >
-                        {length}
+                        {`${size.charAt(0).toUpperCase() + size.slice(1)} (${price})`} {/* Show price dynamically */}
                       </button>
                     ))
                   )}

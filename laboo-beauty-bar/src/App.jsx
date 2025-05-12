@@ -10,6 +10,7 @@ import BookingNow from './Components/booknow';
 import BookWig from "./Components/wig-booking";
 import NailShape from "./Components/pick-nail-shape";
 import NailDecoration from "./Components/nail-deco";
+import ConfirmPage from "./Components/confirm";
 import "./fonts/fonts.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path ="/wig-booking" element={<BookWig/>}/>
         <Route path="/pick-nail-shape" element={<NailShape/>}/>
         <Route path="/nail-deco" element={<NailDecoration/>}/>
+        <Route path="/confirm" element={<ConfirmPage/>}/>
       </Routes>
     </Router>
   );

@@ -609,7 +609,7 @@ h1 {
 
 .naildeco-card.selected {
   transform: scale(1.03);
-  box-shadow: 0 0 0 3px #ff6b9e, 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 0 0 3px #d0ae25, 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .naildeco-image {
@@ -693,7 +693,7 @@ h1 {
 
 .art-price {
   font-weight: bold;
-  color: #ff6b9e;
+  color: #d0ae25;
   min-width: 60px;
 }
 
@@ -711,7 +711,7 @@ h1 {
 }
 
 .total-price {
-  color: #ff6b9e;
+  color: #d0ae25;
 }
 
 .submit-button {
@@ -720,7 +720,7 @@ h1 {
   max-width: 300px;
   margin: 25px auto 0;
   padding: 15px;
-  background: #ff6b9e;
+  background: #d0ae25;
   color: white;
   border: none;
   border-radius: 8px;
@@ -731,7 +731,79 @@ h1 {
 }
 
 .submit-button:hover {
-  background: #ff5a8a;
+  background: #d0ae25;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 90, 138, 0.3);
+  box-shadow: 0 4px 8px rgba(227, 192, 15, 0.3);
 }
+/*confirm page*/
+.confirm-container {
+  position: relative;
+  top: 150px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.confirm-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+
+.checkout-summary p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.checkout-summary strong {
+  color: #222;
+}
+
+.checkout-summary hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.confirm-container button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #e6d045;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-container button:hover {
+  background-color: #e6d045;
+}
+.time-picker {
+  margin-top: 20px;
+}
+
+.time-picker label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.time-picker input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
