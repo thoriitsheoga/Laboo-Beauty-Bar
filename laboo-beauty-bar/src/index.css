@@ -571,3 +571,167 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
 }
+/*nail deco styling*/
+.nail-decoration-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.naildeco-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+
+.naildeco-options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 2fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.naildeco-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.naildeco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.naildeco-card.selected {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 3px #ff6b9e, 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.naildeco-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.naildeco-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  padding: 15px 10px;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.options-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.selection-summary h3 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.selection-details {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.selection-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  color: #555;
+}
+
+.selection-row span:last-child {
+  font-weight: bold;
+  color: #333;
+}
+
+.nail-art-options {
+  margin: 25px 0;
+}
+
+.nail-art-options h4 {
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.nail-art-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nail-art-controls input {
+  width: 80px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.art-price {
+  font-weight: bold;
+  color: #ff6b9e;
+  min-width: 60px;
+}
+
+.total-section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.total-price {
+  color: #ff6b9e;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 25px auto 0;
+  padding: 15px;
+  background: #ff6b9e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #ff5a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 90, 138, 0.3);
+}
