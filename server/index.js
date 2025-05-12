@@ -1,12 +1,25 @@
 const express = require('express');
 const cors = require('cors');
-const pool = require('./db');
+const customerRoutes = require('./routes/customerRoutes');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 5000;
 
-// POST route to book an appointment
+app.use(cors());
+app.use(express.json()); // to parse JSON bodies
+
+app.use('/api/customers', customerRoutes); 
+
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+// --- Book Appointment ---
 app.post('/api/book', async (req, res) => {
   const {
     shape,
@@ -30,6 +43,7 @@ app.post('/api/book', async (req, res) => {
     res.status(500).send({ error: 'Booking failed' });
   }
 });
+
 app.get('/', (req, res) => {
   res.send('API is running');
 });
